@@ -18,6 +18,7 @@ import services.EmployeeService;
  *
  */
 public class EmployeeAction extends ActionBase {
+    //ActionBaseクラスをスーパークラスとして継承
 
     private EmployeeService service;
 
