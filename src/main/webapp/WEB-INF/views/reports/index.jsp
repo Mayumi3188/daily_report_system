@@ -23,8 +23,8 @@
                     <th class="report_date">日付</th>
                     <th class="report_title">タイトル</th>
                     <th class="report_action">操作</th>
-                 </tr>
-                 <c:forEach var="report" items="${reports}" varStatus="status">
+                </tr>
+                <c:forEach var="report" items="${reports}" varStatus="status">
                     <fmt:parseDate value="${report.reportDate}" pattern="yyyy-MM-dd" var="reportDay" type="date" />
 
                     <tr class="row${status.count % 2}">
@@ -34,11 +34,11 @@
                         <td class="report_action"><a href="<c:url value='?action=${actRep}&command=${commShow}&id=${report.id}' />">詳細を見る</a></td>
                     </tr>
                 </c:forEach>
-             </tbody>
-         </table>
+            </tbody>
+        </table>
 
         <div id="pagination">
-            (全 ${reports_count} 件)<br />
+            （全 ${reports_count} 件）<br />
             <c:forEach var="i" begin="1" end="${((reports_count - 1) / maxRow) + 1}" step="1">
                 <c:choose>
                     <c:when test="${i == page}">
@@ -51,5 +51,6 @@
             </c:forEach>
         </div>
         <p><a href="<c:url value='?action=${actRep}&command=${commNew}' />">新規日報の登録</a></p>
+
     </c:param>
 </c:import>
